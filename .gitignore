@@ -1,0 +1,43 @@
+# Node dependencies
+/node_modules
+
+# Dependency directories
+/.pnp
+.pnp.js
+
+# Optional npm cache directory
+.npm
+
+# Compiled output
+/dist
+
+# Logs
+/logs
+*.log
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Editor files
+.idea
+.vscode
+
+# Build cache
+.cache
+
+# Coverage directory
+/coverage
+
+# React build artifacts
+/build
+
+# Yarn integrity file
+.yarn-integrity
+.env
