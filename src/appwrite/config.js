@@ -134,7 +134,7 @@ export class Service {
         conf.storageBucket, 
         fileId
         );
-    }; 
+    };
 
 }
 
