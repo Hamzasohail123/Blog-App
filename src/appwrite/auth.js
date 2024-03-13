@@ -4,7 +4,8 @@ import conf from '../config';
 export class AuthService{
     Client = new Client();
     account;
-
+    
+    // Constructor function to create User object
     constructor(){
         this.Client
             .setEndpoint(conf.appwriteUrl)
