@@ -23,7 +23,7 @@ export class AuthService{
             } else {
                 return userAccount;                
             }            
-        } catch (error) {
+        } catch (error){
             return error
         }
     }
