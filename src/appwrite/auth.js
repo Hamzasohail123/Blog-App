@@ -24,7 +24,7 @@ export class AuthService{
                 return userAccount;                
             }            
         } catch (error){
-            return error
+            return error;
         }
     }
 
