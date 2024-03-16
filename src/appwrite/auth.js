@@ -33,7 +33,7 @@ export class AuthService{
         try {
             return await this.account.createEmailSession(email, password);            
         } catch (error) {
-            throw error            
+            throw error;            
         }
     }
 
@@ -42,9 +42,9 @@ export class AuthService{
         try {
             return await this.account.get();              
         } catch (error) {
-            throw error            
+            throw error;           
         }
-        return null
+        return null;
     }
 
     // Logout Account
@@ -52,7 +52,7 @@ export class AuthService{
         try {
             return await this.account.deleteSessions();            
         } catch (error) {
-            throw error            
+            throw error;            
         }
     }      
 }
