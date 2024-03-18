@@ -96,7 +96,7 @@ export class Service {
             );            
         } catch (error) {
             console.log('get posts error', error);
-            return false            
+            return false;            
         }
     }
 
