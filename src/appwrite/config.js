@@ -110,7 +110,7 @@ export class Service {
             );            
         } catch (error) {
             console.log('file upload error'. error);
-            return false            
+            return false;            
         }
     }
 
@@ -124,7 +124,7 @@ export class Service {
             return true            
         } catch (error) {
             console.log('file delete error', error);
-            return false            
+            return false;            
         }
     }
 
