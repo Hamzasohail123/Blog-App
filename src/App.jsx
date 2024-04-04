@@ -33,7 +33,7 @@ function App() {
           {/* <Outlet /> */}
         </main>
         <Footer />
-<h1 className='bg-slate-600 text-xl'>aaaaaaaaaaaaaa</h1>
+     <h1 className='bg-slate-600 text-xl'>aaaaaaaaaaaaaa</h1>
       </div>
     </div>
   ) : null
