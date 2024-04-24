@@ -1,6 +1,7 @@
 import React, { useCallback } from "react";
 import { useForm } from "react-hook-form";
-import { Button, Input, RTE, Select } from "../index";
+import { Button, Input, RTE } from "../index";
+import Select from "../Select";
 import appwriteService from "../../appwrite/config";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -19,8 +20,9 @@ export default function PostForm({ post }) {
     const userData = useSelector((state) => state.auth.userData);
 
     const submit = async (data) => {
+        console.log(data);
         if (post) {
-            const file = data.image[0] ? await appwriteService.uploadFile(data.image[0]) : null;
+            const file = data.image[0] ? await appwriteService.fileUpload(data.image[0]) : null;
 
             if (file) {
                 appwriteService.deleteFile(post.featuredImage);
@@ -69,11 +71,6 @@ export default function PostForm({ post }) {
 
         return () => subscription.unsubscribe();
     }, [watch, slugTransform, setValue]);
-    const statusOptions = [
-        { value: "active", label: "Active" },
-        { value: "inactive", label: "Inactive" }
-    ];
-    
 
     return (
         <form onSubmit={handleSubmit(submit)} className="flex flex-wrap">
@@ -113,7 +110,7 @@ export default function PostForm({ post }) {
                     </div>
                 )}
                 <Select
-                    options={statusOptions}
+                    options={["active", "inactive"]}
                     label="Status"
                     className="mb-4"
                     {...register("status", { required: true })}

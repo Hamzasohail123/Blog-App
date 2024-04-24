@@ -86,7 +86,7 @@ export class Service {
         }
     }
 
-    // Get Posts Service
+    // Get Posts Services
     async getPosts(queries = [Query.equal('status', 'active')]){
         try {
             return await this.Databases.listDocuments(
@@ -100,17 +100,17 @@ export class Service {
         }
     }
 
-    // File Upload Service
-    async fileUpload(file){
+    // File Upload Services
+    async uploadFile(file){
         try {
-            return await this.Storag.createFile(
+            return await this.bucket.createFile(
                 conf.storageBucket,
                 ID.unique(),
                 file
-            );            
+            )
         } catch (error) {
-            console.log('file upload error'. error);
-            return false;            
+            console.log("Appwrite serive :: uploadFile :: error", error);
+            return false
         }
     }
 
