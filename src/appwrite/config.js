@@ -11,7 +11,8 @@ export class Service {
             .setEndpoint(conf.appwriteUrl)
             .setProject(conf.projectId)
         this.Databases = new Databases(this.Client);
-        this.Storag = new Storage(this.Client)    
+        this.Storage = new Storage(this.Client);
+    
     }
 
     // Create Post Service
@@ -103,7 +104,7 @@ export class Service {
     // File Upload Services
     async uploadFile(file){
         try {
-            return await this.bucket.createFile(
+            return await this.Storage.createFile(
                 conf.storageBucket,
                 ID.unique(),
                 file
